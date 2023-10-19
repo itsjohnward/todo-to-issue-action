@@ -67,7 +67,7 @@ class NewIssueTests(unittest.TestCase):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "handlebars"), 2)
 
     def test_org_issues(self):
-        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Org"), 4)
+        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Org"), 2)
 
     def test_scss_issues(self):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "scss"), 2)
@@ -92,6 +92,12 @@ class NewIssueTests(unittest.TestCase):
 
     def test_xaml_issues(self):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "xml"), 2)
+
+    def test_docker_issues(self):
+        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Dockerfile"), 1)
+
+    def test_earthly_issues(self):
+        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Earthly"), 1)
 
 
 class ClosedIssueTests(unittest.TestCase):
@@ -148,7 +154,7 @@ class ClosedIssueTests(unittest.TestCase):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "handlebars"), 2)
 
     def test_org_issues(self):
-        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Org"), 4)
+        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Org"), 2)
 
     def test_scss_issues(self):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "scss"), 2)
@@ -173,12 +179,6 @@ class ClosedIssueTests(unittest.TestCase):
 
     def test_xaml_issues(self):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "xml"), 2)
-
-    def test_docker_issues(self):
-        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Dockerfile"), 1)
-
-    def test_earthly_issues(self):
-        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Earthly"), 1)
 
 
 class IgnorePatternTests(unittest.TestCase):

@@ -408,7 +408,7 @@ new file mode 100644
 index 0000000..a6c6cb0
 --- /dev/null
 +++ b/tests/Dockerfile
-@@ -0,0 +1,4 @@
+@@ -0,0 +1,6 @@
 +FROM python:3-slim AS builder
 +ADD main.py /app/main.py
 +RUN pip install --target=/app requests
@@ -420,7 +420,7 @@ new file mode 100644
 index 0000000..a6c6cb0
 --- /dev/null
 +++ b/tests/Earthfile
-@@ -0,0 +1,4 @@
+@@ -0,0 +1,9 @@
 +VERSION 0.7
 +FROM node:18-alpine
 +build:
