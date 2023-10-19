@@ -403,3 +403,30 @@ index 0000000..a6c6cb0
 +<Label Text="why"/>
 +<!-- TODO: please -->
 +<Label Text="ok"/>
+diff --git a/tests/Dockerfile b/tests/Dockerfile
+new file mode 100644
+index 0000000..a6c6cb0
+--- /dev/null
++++ b/tests/Dockerfile
+@@ -0,0 +1,4 @@
++FROM python:3-slim AS builder
++ADD main.py /app/main.py
++RUN pip install --target=/app requests
++# TODO: use ubuntu instead
++FROM gcr.io/distroless/python3-debian10
++CMD ["/app/main.py"]
+diff --git a/tests/Earthfile b/tests/Earthfile
+new file mode 100644
+index 0000000..a6c6cb0
+--- /dev/null
++++ b/tests/Earthfile
+@@ -0,0 +1,4 @@
++VERSION 0.7
++FROM node:18-alpine
++build:
++    # TODO: use turbo instead
++    RUN npm install --workspace $NAME
++    CMD ["npm", "start"]
++docker:
++    FROM +build --NAME=$NAME
++    SAVE IMAGE $NAME:latest
