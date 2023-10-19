@@ -175,10 +175,10 @@ class ClosedIssueTests(unittest.TestCase):
         self.assertEqual(count_issues_for_file_type(self.raw_issues, "xml"), 2)
 
     def test_docker_issues(self):
-        self.assertEqual(count_issues_for_file_type(self.raw_issues, "dockerfile"), 1)
+        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Dockerfile"), 1)
 
     def test_earthly_issues(self):
-        self.assertEqual(count_issues_for_file_type(self.raw_issues, "earthly"), 1)
+        self.assertEqual(count_issues_for_file_type(self.raw_issues, "Earthly"), 1)
 
 
 class IgnorePatternTests(unittest.TestCase):
